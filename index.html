@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1>Task Manager</h1>
+        <button id="themeToggle" type="button" aria-label="Toggle color theme">🌙 Dark</button>
+    </header>
+
+
+    <main>
+        <!-- Add Task -->
+        <div id="add-task" aria-labelledby="add-task-title">
+            <h2 id="add-task-title" class="visually-hidden">Add a new task</h2>
+
+            <label for="taskText" class="visually-hidden">Task description</label>
+            <input id="taskText" type="text" placeholder="Describe your task..." />
+
+            <label for="taskDate" class="visually-hidden">Due date</label>
+            <input id="taskDate" type="date" />
+
+            <button id="addBtn" type="button">Add Task</button>
+        </div>
+
+        <!-- Filters -->
+        <div id="filters" role="group" aria-label="Filter tasks">
+            <button data-filter="all" class="filter-btn is-active">All</button>
+            <button data-filter="completed" class="filter-btn">Completed</button>
+            <button data-filter="active" class="filter-btn">Active</button>
+        </div>
+
+        <!-- Sort -->
+        <div id="sort" role="group" aria-label="Sort tasks">
+            <button id="sortBtn" type="button" data-dir="asc">Sort by Due Date ↑</button>
+        </div>
+
+        <!-- Task List -->
+        <ul id="taskList" aria-live="polite" aria-label="Tasks list"></ul>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Task Manager. All rights reserved to Shay Levinson.</p>
+    </footer>
+
+
+</body>
+
+</html>
