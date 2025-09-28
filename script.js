@@ -1,6 +1,6 @@
 'use strict';
 
-/* ===================== DOM (getElementById) ===================== */
+/*  DOM (getElementById)  */
 const $taskText = document.getElementById('taskText');
 const $taskDate = document.getElementById('taskDate');
 const $addBtn = document.getElementById('addBtn');
@@ -9,7 +9,7 @@ const $filters = document.getElementById('filters');
 const $sortBtn = document.getElementById('sortBtn');
 const $themeToggle = document.getElementById('themeToggle'); // NEW
 
-/* ===================== Storage (localStorage) ===================== */
+/*  Storage (localStorage)  */
 
 function getTasks() {
     const raw = localStorage.getItem('tasks');
@@ -26,16 +26,16 @@ function saveTasks(tasks) {
     localStorage.setItem('tasks', JSON.stringify(tasks));
 }
 
-/* ===================== STATE ===================== */
+/*  STATE  */
 let tasks = getTasks();
 let currentFilter = 'all';
 let sortDir = 'asc';
 
-/* ===================== Utils ===================== */
+/*  Utils  */
 const genId = () => Math.random().toString(36).slice(2, 9);
 const normDate = (d) => (/^\d{4}-\d{2}-\d{2}$/.test(d) ? d : '');
 
-/* ===================== THEME (Dark / Light) ===================== */
+/*  THEME (Dark / Light)  */
 
 function getPreferredTheme() {
     const saved = localStorage.getItem('theme');
@@ -63,7 +63,7 @@ if (window.matchMedia) {
     });
 }
 
-/* ===================== Render (global) ===================== */
+/*  Render (global) */
 function renderTasks() {
     // סינון
     let view = tasks.filter(t => {
@@ -112,7 +112,7 @@ function renderTasks() {
     });
 }
 
-/* ===================== Actions ===================== */
+/*  Actions */
 /** הוספת משימה חדשה */
 function addTask() {
     const text = $taskText.value.trim();
@@ -141,11 +141,11 @@ function filterTasks(filter) {
 function sortTasks() {
     sortDir = sortDir === 'asc' ? 'desc' : 'asc';
     $sortBtn.dataset.dir = sortDir;
-    $sortBtn.textContent = `Sort by Due Date ${sortDir === 'asc' ? '↑' : '↓'}`;
+    $sortBtn.textContent = `Sort by Due Date ${sortDir === 'asc' ? '⬆️' : '⬇️'}`;
     renderTasks();
 }
 
-/* ===================== Event Handling ===================== */
+/*  Event Handling  */
 // כפתור "הוסף משימה"
 $addBtn.addEventListener('click', addTask);
 // אנטר בשדה הטקסט
@@ -193,7 +193,7 @@ $taskList.addEventListener('change', (e) => {
 
 $themeToggle?.addEventListener('click', toggleTheme);
 
-/* ===================== Initial Tasks from API (Optional) ===================== */
+/*Initial Tasks from API*/
 async function fetchInitialTasks() {
     try {
         const res = await fetch('https://jsonplaceholder.typicode.com/todos?_limit=5');
@@ -213,7 +213,7 @@ async function fetchInitialTasks() {
     }
 }
 
-/* ===================== INIT ===================== */
+/*INIT*/
 renderTasks();
 if (tasks.length === 0) {
     fetchInitialTasks();

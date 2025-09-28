@@ -1,4 +1,4 @@
-/* ==== THEME & TOKENS ==== */
+/*  THEME & TOKENS  */
 :root {
     --bg: #0f1222;
     --surface: #171a2e;
@@ -27,7 +27,7 @@
 
 }
 
-/* ==== RESET LITE ==== */
+/*  RESET LITE  */
 * {
     box-sizing: border-box;
 }
@@ -46,7 +46,7 @@ body {
     padding: var(--space-6);
 }
 
-/* ==== PAGE LAYOUT (GRID) ==== */
+/*  PAGE LAYOUT (GRID) */
 header,
 main,
 footer {
@@ -66,7 +66,7 @@ h1 {
     letter-spacing: 0.2px;
 }
 
-/* ==== SURFACES / CARDS ==== */
+/*  SURFACES / CARDS */
 .card {
     background: var(--surface);
     border: 1px solid var(--stroke);
@@ -97,14 +97,14 @@ h1 {
     box-shadow: var(--shadow-lg);
 }
 
-/* ==== ADD TASK (GRID) ==== */
+/*  ADD TASK (GRID)  */
 #add-task {
     display: grid;
     grid-template-columns: 1fr minmax(160px, 220px) 140px;
     gap: var(--space-2);
 }
 
-/* ==== FORM ELEMENTS ==== */
+/*  FORM ELEMENTS  */
 input[type="text"],
 input[type="date"] {
     background: var(--surface-2);
@@ -125,7 +125,7 @@ input:focus {
     border-color: var(--accent);
 }
 
-/* ==== BUTTONS ==== */
+/*  BUTTONS  */
 button {
     background: var(--accent);
     color: #08101f;
@@ -171,7 +171,7 @@ button:focus-visible {
     border: 1px solid #23533f;
 }
 
-/* ==== TASK LIST ==== */
+/*  TASK LIST  */
 #taskList {
     list-style: none;
     padding: var(--space-2);
@@ -228,7 +228,7 @@ button:focus-visible {
     transform: scale(0.98);
 }
 
-/* ==== UTILITY ==== */
+/*  UTILITY  */
 .visually-hidden {
     position: absolute !important;
     height: 1px;
@@ -241,7 +241,7 @@ button:focus-visible {
     margin: -1px;
 }
 
-/* ==== RESPONSIVE ==== */
+/*  RESPONSIVE  */
 @media (max-width: 900px) {
     main {
         gap: var(--space-3);
@@ -274,7 +274,7 @@ button:focus-visible {
     }
 }
 
-/* ===================== THEME TOGGLE (NEW) ===================== */
+/* THEME TOGGLE (NEW)  */
 header {
     display: flex;
     align-items: center;
