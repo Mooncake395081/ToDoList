@@ -216,5 +216,5 @@ async function fetchInitialTasks() {
 /* ===================== INIT ===================== */
 renderTasks();
 if (tasks.length === 0) {
-
+    fetchInitialTasks();
 }
